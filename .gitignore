@@ -1,0 +1,9 @@
+app-vue-hash/node_modules/
+app-vue-hash/dist/
+app-vue-history/node_modules/
+app-vue-history/dist/
+app-jquery/node_modules/
+app-jquery/dist/
+main/node_modules/
+main/dist/
+/node_modules
