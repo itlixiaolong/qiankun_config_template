@@ -1,13 +1,13 @@
 # 项目说明 qiankun-vue-and-jquery-config-template
 
-- 用`qiankun`来实现`vue`技术栈的前端微服务
+- 用`qiankun`来实现`vue`技术栈和jeury技术栈的前端微服务
 
-`main`是主项目是vue项目，`app-vue-hash`是vue的`hash`模式路由的子项目，`app-vue-history`是vue的`history`模式路由的子项目，app-jqery-*是传统的jquery的多页子项目
-在主项目和子项目之间的数据通讯是基于vuex来做的，通讯范围也覆盖了jquery的项目
+    `main`是主项目是vue项目，`app-vue-hash`是vue的`hash`模式路由的子项目，`app-vue-history`是vue的`history`模式路由的子项目，app-jqery-*是传统的jquery的多页子项目
+    在主项目和子项目之间的数据通讯是基于vuex来做的，通讯范围也覆盖了jquery的项目
 
 - 完成的功能,基于vuex实现各应用之间的响应式视图，有任意一个应用更新了视图，都会触发各个应用的视图更新
 
-详细内容参见代码
+    详细内容参见代码
 
 - `qiankun`的开发和打包和正常模式一模一样，它使用一个全局变量`__POWERED_BY_QIANKUN__`来区分微前端模式和正常模式，不需要额外的配置和代码。
 
