@@ -20,7 +20,9 @@
 在根目录下：
 
 1.先安装依赖： `npm install`
+
 2.再执行`npm run install-all`为所有项目安装依赖。
+
 3.最后执行`npm run start-all`即可启动所有的项目。
 
 `npm run build-all`可以打包所有的项目。
