@@ -17,17 +17,17 @@ const router = new VueRouter({
   routes
 })
 
-const childRoute = ['/app-vue-hash','/app-vue-history','/app-juqery'];
-const isChildRoute = path => childRoute.some(item => path.startsWith(item))
-const rawAppendChild = HTMLHeadElement.prototype.appendChild;
-const rawAddEventListener = window.addEventListener;
-router.beforeEach((to, from, next) => {
-  // 从子项目跳转到主项目
-  if(isChildRoute(from.path) && !isChildRoute(to.path)){
-    HTMLHeadElement.prototype.appendChild = rawAppendChild;
-    window.addEventListener = rawAddEventListener;
-  }
-  next();
-});
+// const childRoute = ['/app-vue-hash','/app-vue-history','/app-juqery-index','/app-jquery-detail'];
+// const isChildRoute = path => childRoute.some(item => path.startsWith(item))
+// const rawAppendChild = HTMLHeadElement.prototype.appendChild;
+// const rawAddEventListener = window.addEventListener;
+// router.beforeEach((to, from, next) => {
+//   // 从子项目跳转到主项目
+//   if(isChildRoute(from.path) && !isChildRoute(to.path)){
+//     HTMLHeadElement.prototype.appendChild = rawAppendChild;
+//     window.addEventListener = rawAddEventListener;
+//   }
+//   next();
+// });
 
 export default router

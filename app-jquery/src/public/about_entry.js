@@ -1,5 +1,6 @@
 const render = () => {
-  document.querySelector('#test').innerHTML = window.$store.state.commonData.parent
+  top.$('#test').html(window.$store.state.commonData.parent)
+  // document.querySelector('#test').innerHTML = window.$store.state.commonData.parent
 };
 
 
@@ -22,6 +23,13 @@ const render = () => {
     mount: ({ data,top }) => {
       console.log('purehtml mount');
       top.$bus.emit()
+      render()
+      // document.getElementById('btn').addEventListener('click',()=>{
+      //   window.$store.dispatch('setData', { parent: 210 })
+      // })
+      top.$('#btn').click(()=>{
+        window.$store.dispatch('setData', { parent: 210 })
+      })
     },
     unmount: () => {
       console.log('purehtml unmount');

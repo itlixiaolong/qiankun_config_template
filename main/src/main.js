@@ -40,10 +40,17 @@ registerMicroApps([
     props: { data : { store, router } }
   },
   { 
-    name: 'app-jquery', 
+    name: 'app-jquery-index', 
     entry: 'http://localhost:3333', 
     container: '#appContainer', 
-    activeRule: '/app-jquery', 
+    activeRule: '/app-jquery-index', 
+    props: { data : { store, router },top:window}
+  },
+  { 
+    name: 'app-jquery-detail', 
+    entry: 'http://localhost:3333/detail.html', 
+    container: '#appContainer', 
+    activeRule: '/app-jquery-detail', 
     props: { data : { store, router },top:window}
   },
   { 

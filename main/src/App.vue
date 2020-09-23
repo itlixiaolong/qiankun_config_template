@@ -4,7 +4,8 @@
     <header>
       <router-link to="/app-vue-hash/" class="link">点击跳转子应用app-vue-hash</router-link>
       <router-link to="/app-vue-history/"  class="link">点击跳转子应用app-vue-history</router-link>
-      <router-link to="/app-jquery/"  class="link">点击跳转子应用app-jquery</router-link>
+      <router-link to="/app-jquery-index/"  class="link">点击跳转子应用app-jquery的首页</router-link>
+      <router-link to="/app-jquery-detail/"  class="link">点击跳转子应用app-jquery的详情页</router-link>
       <router-link to="/about"  class="link">点击跳转父应用的about页</router-link>
     </header>
     <div @click="changeParentState" style="margin-top:50px;">父页面中父项目vuex中的数据：<span style="color:red;font-size:40px;">{{ commonData.parent }}</span>，点击同步所有的子应用变回1</div>
