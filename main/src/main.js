@@ -9,21 +9,26 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import { registerMicroApps, start } from 'qiankun';
-localStorage.setItem('test','2222222')
+localStorage.setItem('test', '2222222')
 Vue.config.productionTip = false
 class Event {
   constructor() {
     this.callbacks = []
   }
-  on (cb) {
+  on(cb) {
     this.callbacks.push(cb)
   }
-  emit (data) {
-    this.callbacks.forEach(fn => fn(data))
+  emit(callBackFnHandler) {
+    if (typeof callBackFnHandler === 'function') {
+      callBackFnHandler(this.callbacks)
+    }else{
+      this.callbacks.forEach(fn=>fn())
+    }
+    this.callbacks = []
   }
 }
 let e = new Event()
-window.$bus=e
+window.$bus = e
 
 new Vue({
   router,
@@ -32,33 +37,33 @@ new Vue({
 }).$mount("#app");
 
 registerMicroApps([
-  { 
-    name: 'app-vue-hash', 
-    entry: 'http://localhost:1111', 
-    container: '#appContainer', 
-    activeRule: '/app-vue-hash', 
-    props: { data : { store, router } }
+  {
+    name: 'app-vue-hash',
+    entry: 'http://localhost:1111',
+    container: '#appContainer',
+    activeRule: '/app-vue-hash',
+    props: { data: { store, router } }
   },
-  { 
-    name: 'app-jquery-index', 
-    entry: 'http://localhost:3333', 
-    container: '#appContainer', 
-    activeRule: '/app-jquery-index', 
-    props: { data : { store, router },top:window}
+  {
+    name: 'app-jquery-index',
+    entry: 'http://localhost:3333',
+    container: '#appContainer',
+    activeRule: '/app-jquery-index',
+    props: { data: { store, router }, top: window }
   },
-  { 
-    name: 'app-jquery-detail', 
-    entry: 'http://localhost:3333/detail.html', 
-    container: '#appContainer', 
-    activeRule: '/app-jquery-detail', 
-    props: { data : { store, router },top:window}
+  {
+    name: 'app-jquery-detail',
+    entry: 'http://localhost:3333/detail.html',
+    container: '#appContainer',
+    activeRule: '/app-jquery-detail',
+    props: { data: { store, router }, top: window }
   },
-  { 
+  {
     name: 'app-vue-history',
-    entry: 'http://localhost:2222', 
-    container: '#appContainer', 
+    entry: 'http://localhost:2222',
+    container: '#appContainer',
     activeRule: '/app-vue-history',
-    props: { data :  { store, router } }
+    props: { data: { store, router } }
   },
 ]);
 
